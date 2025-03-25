@@ -2,9 +2,12 @@ import { NextResponse } from "next/server";
 
 export async function POST() {
   try {
+    // We need to check if we're using OpenAI or Groq
     if (!process.env.OPENAI_API_KEY) {
       throw new Error(`OPENAI_API_KEY is not set`);
     }
+    
+    // We're still using OpenAI's realtime session API as Groq doesn't have a realtime equivalent
     const response = await fetch(
       "https://api.openai.com/v1/realtime/sessions",
       {

@@ -209,6 +209,8 @@ const App: React.FC = () => {
               transition={{ duration: 0.4, delay: 0.5 }}
             >
               <VoiceSelector value={voice} onValueChange={setVoice} />
+              
+              
               <div className="flex flex-col gap-2">
                 <BroadcastButton
                   isSessionActive={isSessionActive}
