@@ -26,8 +26,8 @@ export async function POST() {
         "zsxkib/flux-dev-inpainting:ca8350ff748d56b3ebbd5a12bd3436c2214262a4ff8619de9890ecc41751a008",
         {
           input: {
-            image: `https://ewbnfjppydschctaohux.supabase.co/storage/v1/object/public/images//generated_1740853022338.webp`,
-            mask: `https://ewbnfjppydschctaohux.supabase.co/storage/v1/object/public/images//mask_1740853051979.png`,
+            image: `${process.env.SUPABASE_URL}/storage/v1/object/public/images/warmup-image.webp`,
+            mask: `${process.env.SUPABASE_URL}/storage/v1/object/public/images/warmup-mask.png`,
             prompt: "replace the cold brew sign with a margarita sign",
             strength: 1,
             output_quality: 90,
